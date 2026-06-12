@@ -1,5 +1,6 @@
 ---
 description: "Capture a URL, thought, or reference to the FOMO intake — zero-friction idea capture"
+disabled-model-invocation: true
 allowed-tools: Read, Write, Edit, WebSearch
 ---
 
@@ -37,7 +38,7 @@ Examples:
 
 ### Step 4: Append to links.md
 
-Read `fomo/links.md`, append the new entry at the end.
+Read `<KNOWLEDGE_DIR>/fomo/links.md`, append the new entry at the end.
 
 ### Step 5: Confirm
 

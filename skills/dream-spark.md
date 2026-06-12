@@ -1,5 +1,6 @@
 ---
 description: "Dream Spark — unfocused cross-referencing pass across the full memory pool. The organizational subconscious."
+effort: max
 context: fork
 allowed-tools: Bash, Read, Write, Edit, WebSearch, Grep, Glob
 ---
@@ -74,6 +75,17 @@ Compaction archives old entries from `dream-sparks.md` to `dream-sparks-archive.
    ```
    **HH:MM | compact** — dream-sparks compacted: <N> archived, <N> kept. File: <lines> lines, <KB>KB.
    ```
+
+### Death Evaluation (during compact)
+
+After archival, evaluate remaining entries older than 30 days:
+
+1. **Consumed?** Has this spark been referenced in a plan, decision, daylog entry, or shipped feature? If yes: keep with `[consumed: YYYY-MM-DD]` annotation.
+2. **Signal strength?** `resonant` entries get more patience (45 days). `faint` entries die at 30 days unless consumed.
+3. **Still relevant?** Would a fresh reader find this actionable? If the context has changed (person left, project cancelled, decision already made), mark as dead.
+4. **Death format:** Move to archive with `[DEAD: reason]` annotation. Example: `[DEAD: project cancelled]`, `[DEAD: decision already made]`.
+
+**Never delete sparks.** Dead sparks go to the archive, not to /dev/null. The archive is the graveyard, not the trash.
 
 ### What Compact Does NOT Do
 
@@ -184,6 +196,23 @@ Read everything. This is the expensive step — the unfocused scan.
 8. Your handwritten notes or external capture (if any exist)
 9. Web search on 1-2 keywords extracted from the most recent FOMO links
 10. Today's signal snapshot `<KNOWLEDGE_DIR>/signals/YYYY-MM-DD.md` (written by Step 0)
+
+### Step 1.5: Context anchor (compaction survival)
+
+**Critical for deep mode sessions.** MicroCompact silently evicts the oldest tool results (file reads) as token count grows. The memory files loaded in Step 1 are the first to be cleared — by mid-session, the cross-referencing passes may have lost access to the source material.
+
+After loading, write a **context anchor** — a text summary of the key themes, entities, and patterns found across the loaded context. This is a regular text message (not a tool result) so it survives all compaction tiers:
+
+```
+Dream context anchor:
+- Memory themes: <5-7 key themes across memory files>
+- Active signal clusters: <list from signal snapshot, or "none">
+- Prior spark titles to avoid repeating: <list top 10 recent dream-spark titles>
+- FOMO patterns: <dominant category in recent FOMO captures>
+- Daylog highlights: <key events from last 3 days>
+```
+
+Keep it under 800 tokens. This anchor ensures the cross-referencing passes can still reference the source material even after MicroCompact evicts the raw file reads.
 
 ### Step 2: Cross-referencing passes (the Karpathy loop)
 

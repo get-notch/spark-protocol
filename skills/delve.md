@@ -148,7 +148,7 @@ Two writes, always:
 
    **Note:** For entries that already start with a bracketed tag (e.g., `[claude-code-src]`), insert the `[delved]` marker BEFORE the existing tag. The `[delved]` marker is always the first token after the pipe.
 
-3. **If verdict is `absorb`:** Also route to the relevant idea file in `<KNOWLEDGE_DIR>/ideas/` (append or create) or propose a memory update.
+3. **If verdict is `absorb`:** Also route to the relevant idea file in `<KNOWLEDGE_DIR>/ideas/` (append or create) or propose a memory update to `<MEMORY_DIR>/MEMORY.md`.
 
 4. **Daylog entry:** Append to `<KNOWLEDGE_DIR>/daylog/YYYY-MM-DD.md`:
    ```

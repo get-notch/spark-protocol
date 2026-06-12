@@ -1,5 +1,6 @@
 ---
 description: "Spark — divergent thinking protocol for ideation sessions. Ping-pong chain reaction with trace-back."
+effort: max
 context: fork
 allowed-tools: Bash, Read, Write, Edit, WebSearch, Grep, Glob
 ---
@@ -51,6 +52,24 @@ All of the above, plus:
 7. Web search the anchor topic for recent developments/trends
 8. Check your handwritten notes or external capture system for recent thinking notes
 9. Read the latest signal snapshot (even if >24h old in deep sweep — stale organizational context is still context)
+
+### Anchor the context (compaction survival)
+
+**This step is critical for long sessions.** MicroCompact silently evicts the oldest tool results (file reads, greps, web fetches) as the session grows. The context sweep from Phase 1 is the FIRST thing to be cleared — by mid-session, the fuel you loaded may be gone from the model's view.
+
+After the sweep, BEFORE the volley, write a **context anchor** — a text summary of what you loaded. This is a regular text message, NOT a tool result, so it survives all compaction tiers:
+
+```
+Context anchor for this session:
+- Anchor: "<the anchor>"
+- Memory highlights: <2-3 key items from MEMORY.md that resonate>
+- Dream fuel: <top 3 dream-sparks that connect, with titles>
+- Signal clusters: <any org signal clusters that resonate, or "none active">
+- FOMO threads: <1-2 FOMO links that connect, or "nothing resonating">
+- Daylog context: <anything from today relevant to the anchor>
+```
+
+Keep it under 500 tokens. This is the session's survival kit — if everything else gets compacted, the chain reaction can still reference this anchor.
 
 ### Open the volley
 Present 2-3 unexpected connections from the sweep. Frame them as hops, not findings:

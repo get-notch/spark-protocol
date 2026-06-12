@@ -1,5 +1,6 @@
 ---
 description: "Ideate — activate divergent thinking mode for the session. Loads fuel, sets guardrails, runs session primer, then maintains anti-convergence for all subsequent work."
+effort: max
 context: fork
 allowed-tools: Bash, Read, Write, Edit, WebSearch, Grep, Glob, AskUserQuestion
 ---
